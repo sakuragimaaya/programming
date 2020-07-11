@@ -15,9 +15,7 @@ function App() {
 
   return (
     <div>
-      <button onClick={increment}>いいね！</button>
-      <button onClick={twoincrement}>よくないね！</button>
-      {count}
+      <button onClick={increment}>up</button>
     </div>
   );
 }
