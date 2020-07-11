@@ -7,12 +7,16 @@ function App() {
   const increment = () => {
     setCount(count + 1);
     console.log(count);
-
+  };
+  const twoincrement = () => {
+    setCount(count - 1);
+    console.log(count);
   };
 
   return (
     <div>
-      <button onClick={increment}>いいね</button>
+      <button onClick={increment}>いいね！</button>
+      <button onClick={twoincrement}>よくないね！</button>
       {count}
     </div>
   );
