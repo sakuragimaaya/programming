@@ -2,26 +2,16 @@ import React, { useState } from 'react';
 import './App.css';
 
 function App() {
-  const [count, setCount] = useState(0);
+  const [count, setCount] = useState("sakuragi");
 
   const increment = () => {
-    setCount(count + 1);
-    console.log(count);
-  };
-  const twoincrement = () => {
-    setCount(count - 1);
-    console.log(count);
-  };
-  const fromreset = () => {
-    setCount(0);
+    setCount(count + "sakuragi");
     console.log(count);
   };
 
   return (
     <div>
-      <button onClick={increment}>いいね！</button>
-      <button onClick={twoincrement}>よくないね！</button>
-      <button onClick={fromreset}>消す！</button>
+      <button onClick={increment}>add</button>
       {count}
     </div>
   );
