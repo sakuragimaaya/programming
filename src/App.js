@@ -1,23 +1,24 @@
-import React, { useState } from 'react';
-import './App.css';
 
-function App() {
-  const [count, setCount] = useState("sakuragi");
+import React, { Component } from 'react';
 
-  const increment = () => {
-    setCount(count + "sakuragi");
-    console.log(count);
-  };
+class Header extends Component {
 
-  return (
-    <div>
-      <button onClick={increment}>add</button>
-      {count}
-    </div>
-  );
+  state = { keyword: '' };
+
+  onInputChangeHandler = (event) => {
+    this.setState({ keyword: event.target.value });
+  }
+
+  render() {
+    return (
+      <div style={{ textAlign: 'left' }}>
+        <div>
+          <input placeholder="text" onChange={this.onInputChangeHandler} />
+        </div>
+        <h1>{this.state.keyword}</h1>
+      </div>
+    );
+  }
 }
 
-
-
-
-export default App;
+export default Header;
