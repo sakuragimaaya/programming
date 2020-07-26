@@ -1,6 +1,8 @@
 import React from 'react';
-import "./App.css";
-import Card from "./Card";
+import { BrowserRouter as Router, Route, Switch } from 'react-router-dom'
+import ComponentA from './ComponentA';
+import ComponentB from './ComponentB';
+import ComponentC from './ComponentC';
 
 const sampleArray = [
   { id: 1, name: 'aaa', date: 19921123 },
@@ -13,13 +15,13 @@ const sampleArray = [
 function App() {
 
   return (
-    <div>
-      {sampleArray.map((data, index) => {
-        return (
-          <Card key={index} id={data.id} name={data.name} date={data.date} />
-        )
-      })}
-    </div>
+    <Router>
+      <Switch>
+        <Route exact path="/" component={ComponentA} />
+        <Route exact path="/componentb" component={ComponentB} />
+        <Route exact path="/componentc" component={ComponentC} />
+      </Switch>
+    </Router>
   );
 }
 
