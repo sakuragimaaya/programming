@@ -7,13 +7,12 @@ const ComponentB = (props) => {
     const backPage = () => {
         props.history.push('/')
     }
+
     return (
         <>
-            <div>
-                ComponentB
-        </div>
-            <Button variant="primary">Primary</Button>
-            <Link to="componentc" >Componentcへ移動</Link>
+            <div>ComponentB</div>
+            <Button variant='primary'>Primary</Button>
+            <Link to='/componentc' >Componentcへ移動</Link>
         </>
     );
 };
