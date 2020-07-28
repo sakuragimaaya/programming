@@ -1,6 +1,5 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
-import { Table } from 'react-bootstrap';
 import { Card } from 'react-bootstrap';
 
 const ComponentA = () => {
@@ -10,8 +9,8 @@ const ComponentA = () => {
             <h1>MENU</h1>
             <ul>
                 <li><Link to='/' >HOME</Link></li>
-                <li><Link to='/componentb'>ComponentB移動</Link></li>
-                <li><Link to='/componentc' >Componentc移動</Link></li>
+                <li><Link to='/componentb' >Componentb</Link></li>
+                <li><Link to='/componentc' >Componentc</Link></li>
             </ul>
 
             <Card style={{ width: '18rem' }}>

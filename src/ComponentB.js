@@ -4,9 +4,7 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import { Button } from 'react-bootstrap';
 
 const ComponentB = (props) => {
-    const backPage = () => {
-        props.history.push('/')
-    }
+
 
     return (
         <>
