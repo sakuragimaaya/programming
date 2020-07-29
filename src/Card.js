@@ -4,7 +4,6 @@ import './Card.css';
 const Card = (props) => {
 
     return (
-
         <table>
             <tr>
                 <td>{props.id}</td>

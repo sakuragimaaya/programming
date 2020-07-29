@@ -4,7 +4,6 @@ import ComponentA from './ComponentA';
 import ComponentB from './ComponentB';
 import ComponentC from './ComponentC';
 
-
 function App() {
 
   return (
@@ -15,7 +14,7 @@ function App() {
         <Route exact path='/componentc' component={ComponentC} />
       </Switch>
     </Router>
-
   );
 };
+
 export default App

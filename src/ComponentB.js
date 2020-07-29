@@ -5,7 +5,6 @@ import { Button } from 'react-bootstrap';
 
 const ComponentB = (props) => {
 
-
     return (
         <>
             <div>ComponentB</div>

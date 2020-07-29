@@ -7,7 +7,6 @@ const ComponentC = (props) => {
     }
 
     return (
-
         <div>
             <div>ComponentC </div>
             <Link to='/componentb'>componentb</Link>
