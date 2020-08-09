@@ -3,24 +3,23 @@ import { Link } from 'react-router-dom'
 import axios from 'axios';
 import { Table } from 'react-bootstrap';
 
-
 const ComponentA = () => {
     const [data, setData] = useState([]);
 
     useEffect(() => {
         console.log('useEffect が呼び出されました');
-
         axios.get('https://jsonplaceholder.typicode.com/todos')
             .then(res => {
                 setData(res.data);
             })
     }, []);
+
     console.log(data, 'dataの確認');
+
     return (
         <div>
             <div>ComponentA</div>
             <Link to="componentb">ComponentBへ移動</Link>
-
             <Table striped bordered hover size="sm">
                 <thead>
                     <tr>
