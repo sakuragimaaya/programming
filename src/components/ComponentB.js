@@ -9,16 +9,19 @@ const ComponentB = () => {
     const [state, dispatch] = useReducer(reducer, []);
     const [title, setTitle] = useState('');
     const [body, setBody] = useState('');
+    const [comment, setComment] = useState('');
 
     const handleClick = (e) => {
         e.preventDefault();
         dispatch({
             type: ADD_EVENT,
             title,
-            body
+            body,
+            comment
         });
         setTitle('');
         setBody('');
+        setComment('');
     };
 
     const deleteAllEvent = (e) => {
@@ -27,9 +30,6 @@ const ComponentB = () => {
             type: DELETE_ALL_EVENT
         });
     };
-
-
-
 
     return (
         <div>
@@ -52,14 +52,18 @@ const ComponentB = () => {
                         value={body}
                         onChange={(e) => setBody(e.target.value)}
                     />
+                    <Form.Label>Comment</Form.Label>
+                    <Form.Control
+                        type="text"
+                        placeholder="comment"
+                        value={comment}
+                        onChange={(e) => setComment(e.target.value)}
+                    />
                 </Form.Group>
-                <Button variant="primary" onClick={handleClick}>
-                    イベント作成
-        </Button>
-                <Button variant="danger" onClick={deleteAllEvent}>
-                    イベント全削除
-        </Button>
+                <Button variant="primary" onClick={handleClick}>イベント作成</Button>
+                <Button variant="danger" onClick={deleteAllEvent}>イベント全削除</Button>
             </Form>
+
             <h1>Table</h1>
             <Table striped bordered hover>
                 <thead>
@@ -67,6 +71,7 @@ const ComponentB = () => {
                         <th>id</th>
                         <th>title</th>
                         <th>body</th>
+                        <th>comment</th>
                         <th>#</th>
                     </tr>
                 </thead>
@@ -77,6 +82,7 @@ const ComponentB = () => {
                                 <td>{data.id}</td>
                                 <td>{data.title}</td>
                                 <td>{data.body}</td>
+                                <td>{data.comment}</td>
                                 <td>
                                     <Button variant="danger">削除</Button>
                                 </td>
