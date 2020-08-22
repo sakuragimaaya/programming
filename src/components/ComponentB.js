@@ -29,12 +29,7 @@ const ComponentB = () => {
             type: DELETE_ALL_EVENT
         });
     };
-    const clickallEvent = (e) => {
-        e.preventDefault();
-        dispatch({
-            type: CLICK_ALL_EVENT
-        });
-    };
+
     return (
         <div>
             <div>ComponentB</div>
@@ -82,7 +77,7 @@ const ComponentB = () => {
                 <tbody>
                     {state.map((data, index) => {
                         const id = data.id;
-                        const clickallEvent = () => {
+                        const clickAllEvent = () => {
                             dispatch({
                                 type: CLICK_ALL_EVENT,
                                 id
@@ -95,7 +90,7 @@ const ComponentB = () => {
                                 <td>{data.body}</td>
                                 <td>{data.comment}</td>
                                 <td>
-                                    <Button variant="danger" onClick={clickallEvent}>削除</Button>
+                                    <Button variant="danger" onClick={clickAllEvent}>削除</Button>
                                 </td>
                             </tr>
                         );
