@@ -1,6 +1,6 @@
 import React, { useReducer, useState } from 'react';
 import { Link } from 'react-router-dom';
-import { ADD_EVENT, DELETE_ALL_EVENT } from '../actions/index';
+import { ADD_EVENT, DELETE_ALL_EVENT, CLICK_ALL_EVENT } from '../actions/index';
 import reducer from '../reducers/index';
 import { Button, Form, Table } from 'react-bootstrap';
 import 'bootstrap/dist/css/bootstrap.min.css';
@@ -23,14 +23,18 @@ const ComponentB = () => {
         setBody('');
         setComment('');
     };
-
     const deleteAllEvent = (e) => {
         e.preventDefault();
         dispatch({
             type: DELETE_ALL_EVENT
         });
     };
-
+    const clickallEvent = (e) => {
+        e.preventDefault();
+        dispatch({
+            type: CLICK_ALL_EVENT
+        });
+    };
     return (
         <div>
             <div>ComponentB</div>
@@ -77,14 +81,21 @@ const ComponentB = () => {
                 </thead>
                 <tbody>
                     {state.map((data, index) => {
+                        const id = data.id;
+                        const clickallEvent = () => {
+                            dispatch({
+                                type: CLICK_ALL_EVENT,
+                                id
+                            });
+                        };
                         return (
                             <tr key={index}>
-                                <td>{data.id}</td>
+                                <td>{id}</td>
                                 <td>{data.title}</td>
                                 <td>{data.body}</td>
                                 <td>{data.comment}</td>
                                 <td>
-                                    <Button variant="danger">削除</Button>
+                                    <Button variant="danger" onClick={clickallEvent}>削除</Button>
                                 </td>
                             </tr>
                         );
