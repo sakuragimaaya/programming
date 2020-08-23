@@ -1,11 +1,14 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import App from './App';
+import StoreProvider from './store/index';
 
 ReactDOM.render(
   <React.StrictMode>
-    <App />
-  </React.StrictMode>,
+    <StoreProvider>
+      <App />
+    </StoreProvider >
+  </React.StrictMode >,
   document.getElementById('root')
 );
 
