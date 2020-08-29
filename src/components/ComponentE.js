@@ -1,6 +1,6 @@
 import React, { useContext } from 'react';
 import { Store } from '../store/index';
-import { INCREMENT, DOWN, RESET } from '../actions/index';
+import { INCREMENT, DOWN, RESET, PLUS } from '../actions/index';
 
 const ComponentE = () => {
     const { globalState, setGlobalState } = useContext(Store);
@@ -22,6 +22,15 @@ const ComponentE = () => {
         });
     };
 
+    const plusClick = () => {
+        setGlobalState({
+            type: PLUS
+        });
+    };
+
+
+
+
     console.log(globalState);
 
     return (
@@ -30,6 +39,7 @@ const ComponentE = () => {
             <button onClick={handleClick}>+1</button>
             <button onClick={abcClick}>-1</button>
             <button onClick={resetClick}>reset</button>
+            <button onClick={plusClick}>+10</button>
         </div>
     );
 };
